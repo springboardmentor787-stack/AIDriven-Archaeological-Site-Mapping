@@ -255,11 +255,6 @@ From the saved local YOLO training run:
 - final `mAP50`: `0.83206`
 - final `mAP50-95`: `0.58611`
 
-## Important Notes
-
-- The local workspace contains trained weights referenced by the app, but those files are not committed to the public repository.
-- `train_seg.py` is the YOLO detection training script despite its generic name.
-- `requirements.txt` is inferred from project imports and has not been exported from a fully locked environment.
 
 
 
