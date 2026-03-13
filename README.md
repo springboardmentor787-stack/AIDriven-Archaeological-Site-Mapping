@@ -276,9 +276,15 @@ Generates terrain feature tables including:
 
 ### Hampi Example
 
+![Hampi app output](docs/screenshots/app-hampi.png)
+
 ### Khajuraho Example
 
+![Khajuraho app output](docs/screenshots/app-khajuraho.png)
+
 ### Nalanda Example
+
+![Nalanda app output](docs/screenshots/app-nalanda.png)
 
 ## Key Files
 
@@ -389,3 +395,8 @@ Future improvements may include:
 - adding GIS-based visualization
 - building a web deployment version
 - extending terrain analysis models
+
+## Important Notes
+
+- The repository includes the two trained weights needed by the main app and demo pipeline, but other model files and run outputs remain excluded.
+- `train_seg.py` is the YOLO detection training script despite its generic name.
