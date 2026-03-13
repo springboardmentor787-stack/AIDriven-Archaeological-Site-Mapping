@@ -276,9 +276,15 @@ Generates terrain feature tables including:
 
 ### Hampi Example
 
+![Hampi app output](docs/screenshots/app-hampi.png)
+
 ### Khajuraho Example
 
+![Khajuraho app output](docs/screenshots/app-khajuraho.png)
+
 ### Nalanda Example
+
+![Nalanda app output](docs/screenshots/app-nalanda.png)
 
 ## Key Files
 
