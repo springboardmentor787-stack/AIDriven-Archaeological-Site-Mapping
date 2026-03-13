@@ -258,19 +258,6 @@ The interface supports:
 - class filtering
 - confidence threshold control
 
-### Extract Terrain Features
-
-```bash
-python terrain_model/extract_terrain_features.py
-```
-
-Generates terrain feature tables including:
-
-- vegetation ratio
-- simulated slope
-- simulated elevation
-- erosion-risk classification
-
 ## Screenshots
 
 ### Hampi Example
