@@ -68,8 +68,7 @@ The overall objective of this project is to:
 ## Detection Results
 Metrics from YOLO Object Detection
 |--------------------|
-|  Metric   | Value  |
-|--------------------|
+|  Metric   | Value  ||
 | mAP50     | 0.163  | 
 | mAP50-95  | 0.0577 |
 | Precision | 0.128  |
