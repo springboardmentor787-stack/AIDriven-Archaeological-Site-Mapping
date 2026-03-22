@@ -6,37 +6,37 @@ The project is further extended with an interactive Streamlit interface, allowin
 
 ## System Architecture
 
-Input Image
+  Input Image
 
-      |
-      v
+       |
+       v
       
 Annotate / Preprocessed Image
 
-      |
-      v
+       |
+       v
       
-U-Net Segmentation
+ U-Net Segmentation
 
-      |
-      v
+       |
+       v
       
-YOLOv8 Object Detection
+ YOLOv8 Object Detection
 
-      |
-      v
+       |
+       v
       
-Terrain Erosion Prediction
+ Terrain Erosion Prediction
 
-      |
-      v
+       |
+       v
       
-Combined Feature Mapping
+ Combined Feature Mapping
 
-      |
-      v
+       |
+       v
       
-Visualization (via Streamlit App)      
+ Visualization (via Streamlit App)      
 
 ## Features
 * Satellite/Drone imagery preprocessing.
