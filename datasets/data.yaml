@@ -1,0 +1,5 @@
+
+train: /content/AI-Archaeological-Site-1/train/images
+val: /content/AI-Archaeological-Site-1/valid/images
+nc: 1
+names: ['objects-ruins-artifacts']
