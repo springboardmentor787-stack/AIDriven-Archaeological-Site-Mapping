@@ -25,7 +25,8 @@ Annotate / Preprocessed Image
  Combined Feature Mapping
        |
        v  
- Visualization (via Streamlit App)      
+ Visualization (via Streamlit App)
+ ```     
 
 ## Features
 * Satellite/Drone imagery preprocessing.
