@@ -6,14 +6,20 @@ The project is further extended with an interactive Streamlit interface, allowin
 
 ## System Architecture
 Input Image
+
       |
       v
+      
 Annotate / Preprocessed Image
+
       |
       v
+      
 U-Net Segmentation
+
       |
       v
+      
 YOLOv8 Object Detection
       |
       v
