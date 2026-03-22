@@ -5,6 +5,7 @@ An AI-driven Archaeological Site Mapping Project uses advanced techniques like d
 The project is further extended with an interactive Streamlit interface, allowing users to easily visualize results, upload images, and explore predictions in real time through a user-friendly dashboard. Future enhancements may include real-time analysis, integration with geospatial data, improved model accuracy, and expansion to detect more complex archaeological patterns using advanced AI techniques.
 
 ## System Architecture
+
 Input Image
 
       |
@@ -21,14 +22,20 @@ U-Net Segmentation
       v
       
 YOLOv8 Object Detection
+
       |
       v
+      
 Terrain Erosion Prediction
+
       |
       v
+      
 Combined Feature Mapping
+
       |
       v
+      
 Visualization (via Streamlit App)      
 
 ## Features
