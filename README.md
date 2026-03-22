@@ -64,22 +64,3 @@ The overall objective of this project is to:
 * To improve the accuracy and efficiency of detecting hidden archaeological sites.
 * Build an interactive Streamlit interface for easy visualization and user interaction.
 * To create a scalable system that can be extended for future improvements and advanced archaeological analysis.
-
-## Detection Results
-Metrics from YOLO Object Detection
-|--------------------|
-|  Metric   | Value  ||
-| mAP50     | 0.163  | 
-| mAP50-95  | 0.0577 |
-| Precision | 0.128  |
-| Recall    | 0.357  |
-|--------------------|
-
-Metrics from Terrain model 
-|----------------------|
-|  Metric   |  Value   |
-|----------------------|
-|  RMSE     |  0.2041  |
-|  R2 score |  0.8367  |
-| Accuracy  |  95.834  |
-|----------------------|
