@@ -6,36 +6,25 @@ The project is further extended with an interactive Streamlit interface, allowin
 
 ## System Architecture
 
+ ```text
   Input Image
-
        |
        v
-      
 Annotate / Preprocessed Image
-
        |
-       v
-      
+       v  
  U-Net Segmentation
-
        |
        v
-      
  YOLOv8 Object Detection
-
        |
-       v
-      
+       v 
  Terrain Erosion Prediction
-
        |
-       v
-      
+       v  
  Combined Feature Mapping
-
        |
-       v
-      
+       v  
  Visualization (via Streamlit App)      
 
 ## Features
