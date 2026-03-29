@@ -113,11 +113,11 @@ Provide interactive interface using Streamlit
 ```
 # Category	                               Tools Used
  Computer Vision	                         YOLO (Ultralytics)
- Segmentation	                            U-Net
- Machine Learning	                        Random Forest
- Dataset Platform	                        Roboflow
+ Segmentation	                             U-Net
+ Machine Learning	                         Random Forest
+ Dataset Platform	                         Roboflow
  Visualization	                           Streamlit
- Programming Language	                    Python
+ Programming Language	                     Python
 ```
 
 ## Dataset
