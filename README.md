@@ -110,14 +110,15 @@ Provide interactive interface using Streamlit
 > Interactive visualization dashboard
  
 ##  Technologies Used
+```
 # Category	                               Tools Used
-# Computer Vision	                         YOLO (Ultralytics)
-# Segmentation	                            U-Net
-# Machine Learning	                        Random Forest
-# Dataset Platform	                        Roboflow
-# Visualization	                           Streamlit
-# Programming Language	                    Python
--
+ Computer Vision	                         YOLO (Ultralytics)
+ Segmentation	                            U-Net
+ Machine Learning	                        Random Forest
+ Dataset Platform	                        Roboflow
+ Visualization	                           Streamlit
+ Programming Language	                    Python
+```
 
 ## Dataset
 
