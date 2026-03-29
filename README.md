@@ -22,29 +22,29 @@ Visualizes outputs through an interactive dashboard
 
 The project follows a structured pipeline from data collection to final visualization, ensuring a smooth flow of data and model integration.
 
-# End-to-End Pipeline
+### End-to-End Pipeline
 
-# Data Collection & Annotation (Milestone 1)
+Data Collection & Annotation (Milestone 1)
                 ↓
-# Data Preprocessing & Augmentation
+Data Preprocessing & Augmentation
                 ↓
-# Dataset Splitting (Train / Validation / Test)
+Dataset Splitting (Train / Validation / Test)
                 ↓
-# Segmentation Model Training (U-Net) (Milestone 2)
+Segmentation Model Training (U-Net) (Milestone 2)
                 ↓
-# Object Detection Model Training (YOLO)
+Object Detection Model Training (YOLO)
                 ↓
-# Feature Extraction (Slope, Vegetation Index, Elevation)
+Feature Extraction (Slope, Vegetation Index, Elevation)
                 ↓
-# Erosion Prediction Model (Random Forest / XGBoost) (Milestone 3)
+Erosion Prediction Model (Random Forest / XGBoost) (Milestone 3)
                 ↓
-# Model Evaluation (IoU, mAP, RMSE, R²)
+Model Evaluation (IoU, mAP, RMSE, R²)
                 ↓
-# Integration of All Models
+Integration of All Models
                 ↓
-# Streamlit Dashboard Development (Milestone 4)
+Streamlit Dashboard Development (Milestone 4)
                 ↓
-# Final Visualization & User Interaction
+Final Visualization & User Interaction
 
 
 # Step-by-Step Explanation
