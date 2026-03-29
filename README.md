@@ -272,7 +272,6 @@ Project demonstration
 
 git clone https://github.com/krishnan4/archaeological-site-Mapping.git
 cd archaeological-site-detection
-
 pip install ultralytics
 pip install segmentation-models-pytorch
 pip install streamlit
