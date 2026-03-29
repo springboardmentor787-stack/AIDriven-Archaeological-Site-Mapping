@@ -599,11 +599,7 @@ with input_col1:
     )
 
 with input_col2:
-    main_lat = st.number_input("Lat", value=float(manual_lat), format="%.6f", key="main_lat")
-    main_lon = st.number_input("Lon", value=float(manual_lon), format="%.6f", key="main_lon")
-
-# Main page location inputs take precedence for analysis.
-manual_lat, manual_lon = float(main_lat), float(main_lon)
+    st.caption("Using sidebar coordinates")
 
 if uploaded_file:
 

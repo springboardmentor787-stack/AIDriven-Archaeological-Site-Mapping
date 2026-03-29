@@ -11,11 +11,27 @@ Production-grade geo-AI system for archaeological landscape intelligence using c
 
 ## Demo / Preview
 
-Add screenshots or GIFs here:
+### Node.js UI (Next.js)
 
-- Streamlit UI output: `docs/screenshots/app-hampi.png`
-- Next.js UI output: `geo-ai-ui` pages
-- Overlay outputs: detection, segmentation, combined risk heatmap
+<p align="center">
+	<img src="docs/Next%20JS%20UI%20Samples/1.png" width="48%" alt="Next.js UI sample 1" />
+	<img src="docs/Next%20JS%20UI%20Samples/2.png" width="48%" alt="Next.js UI sample 2" />
+</p>
+<p align="center">
+	<img src="docs/Next%20JS%20UI%20Samples/3.png" width="48%" alt="Next.js UI sample 3" />
+	<img src="docs/Next%20JS%20UI%20Samples/4.png" width="48%" alt="Next.js UI sample 4" />
+</p>
+
+### Streamlit UI
+
+<p align="center">
+	<img src="docs/Streamlit%20UI%20Samples/1.png" width="48%" alt="Streamlit UI sample 1" />
+	<img src="docs/Streamlit%20UI%20Samples/2.png" width="48%" alt="Streamlit UI sample 2" />
+</p>
+<p align="center">
+	<img src="docs/Streamlit%20UI%20Samples/3.png" width="48%" alt="Streamlit UI sample 3" />
+	<img src="docs/Streamlit%20UI%20Samples/4.png" width="48%" alt="Streamlit UI sample 4" />
+</p>
 
 ## Problem Statement
 
