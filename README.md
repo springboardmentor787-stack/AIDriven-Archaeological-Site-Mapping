@@ -24,26 +24,29 @@ The project follows a structured pipeline from data collection to final visualiz
 
 ### End-to-End Pipeline
 
-#### Data Collection & Annotation (Milestone 1)
-####                  ↓
-#### Data Preprocessing & Augmentation
-####                  ↓
-#### Dataset Splitting (Train / Validation / Test)
-####                  ↓
-#### Segmentation Model Training (U-Net) (Milestone 2)
-####                  ↓
-#### Object Detection Model Training (YOLO)
-####                  ↓
-#### Feature Extraction (Slope, Vegetation Index, Elevation)
-####                  ↓
-#### Erosion Prediction Model (Random Forest / XGBoost) (Milestone 3)
-####                  ↓
-#### Model Evaluation (IoU, mAP, RMSE, R²)
-####                  ↓
-#### Integration of All Models
-####                  ↓
-#### Streamlit Dashboard Development (Milestone 4)
-####                  ↓
+```Data Collection & Annotation (Milestone 1)
+```             ↓
+```Data Preprocessing & Augmentation
+```                ↓
+```Dataset Splitting (Train / Validation / Test)
+```                ↓
+```Segmentation Model Training (U-Net) (Milestone 2)
+```                ↓
+```Object Detection Model Training (YOLO)
+```                ↓
+```Feature Extraction (Slope, Vegetation Index, Elevation)
+```                ↓
+```Erosion Prediction Model (Random Forest / XGBoost) (Milestone 3)
+```                ↓
+```Model Evaluation (IoU, mAP, RMSE, R²)
+```                ↓
+```Integration of All Models
+```                ↓
+```Streamlit Dashboard Development (Milestone 4)
+```                ↓
+```Final Visualization & User Interaction
+ 
+                                  ↓
 #### Final Visualization & User Interaction
 
 
@@ -228,9 +231,9 @@ Erosion-prone
 RMSE (Root Mean Square Error)
 R² Score (model accuracy and fit)
 - Example Prediction:
-## Slope: 28  
-## Vegetation Index: 0.35  
-## Elevation: 130  
+```Slope: 28  
+```Vegetation Index: 0.35  
+```Elevation: 130  
 
 Prediction: Erosion-Prone Area
 
@@ -271,16 +274,16 @@ Project demonstration
 ## Installation
 
 git clone https://github.com/krishnan4/archaeological-site-Mapping.git
-# cd archaeological-site-detection
-# pip install ultralytics
-# pip install segmentation-models-pytorch
-# pip install streamlit
-# pip install opencv-python
-# pip install scikit-learn
-# pip install matplotlib
+```cd archaeological-site-detection
+```pip install ultralytics
+```pip install segmentation-models-pytorch
+```pip install streamlit
+```pip install opencv-python
+```pip install scikit-learn
+```pip install matplotlib
 
 ##  Running the Project
-## streamlit run app.py
+```streamlit run app.py
 
 The dashboard will open automatically in your browser.
 
