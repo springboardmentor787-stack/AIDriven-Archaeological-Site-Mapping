@@ -88,7 +88,7 @@ Interaction by layer:
 - ML Model: predicts erosion risk probability and class.
 - LLM: translates numeric explanations into readable insights.
 
-Detailed design is documented in `ARCHITECTURE.md`.
+Detailed design is documented in [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 ## Tech Stack
 
@@ -196,11 +196,11 @@ Archaeological-Site-Mapping-AI-V2/
 
 ## Results Summary
 
-For full benchmark tables, confusion matrices, cross-validation, and interpretation, see `METRICS.md`.
+For full benchmark tables, confusion matrices, cross-validation, and interpretation, see [METRICS.md](./METRICS.md).
 
 ## Demo Usage Flow
 
-1. Start Streamlit (`app.py`) or Next.js UI (`geo-ai-ui`).
+1. Start Streamlit ([app.py](./app.py)) or Next.js UI ([geo-ai-ui](./geo-ai-ui/)).
 2. Upload image and provide/select coordinates.
 3. View YOLO detections and DeepLab segmentation overlays.
 4. Trigger erosion prediction from engineered geo-visual features.
@@ -238,7 +238,7 @@ Additional project docs:
 - Model serving and SaaS deployment
 - Active learning loop with expert feedback
 
-See `FUTURE_WORK.md` for details.
+See [FUTURE_WORK.md](./FUTURE_WORK.md) for details.
 
 ## License
 
@@ -248,4 +248,4 @@ Add your license file and update this section (for example MIT/Apache-2.0) befor
 
 Harshil Somisetty
 
-If you are using this project for research or deployment, please cite the repository and include the model/artifact version from `artifacts/model_metrics_*/index.json`.
+If you are using this project for research or deployment, please cite the repository and include the model/artifact version from [artifacts/model_metrics_20260329/index.json](./artifacts/model_metrics_20260329/index.json).
