@@ -1,6 +1,6 @@
 # AIDriven-Archaeological-Site-Mapping
 
-# Problem Statement
+## Problem Statement
 
 In Archaeological surveys over large regions are slow, expensive, and difficult to scale manually. So to overcome for this statement:
   * AI-driven Archaeological Site Mapping Project uses advanced techniques like deep learning and computer vision to automatically detect, segment, and analyze archaeological features from satellite or aerial imagery. 
