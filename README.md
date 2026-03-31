@@ -1,8 +1,13 @@
 # AIDriven-Archaeological-Site-Mapping
 
-An AI-driven Archaeological Site Mapping Project uses advanced techniques like deep learning and computer vision to automatically detect, segment, and analyze archaeological features from satellite or aerial imagery. By combining models such as U-Net for image segmentation and object detection algorithms, it helps identify hidden structures and terrain patterns with high accuracy through IoU and Dice Score. The system further evaluates performance using metrics like RMSE and R² score, making the mapping process faster, more precise, and less dependent on manual effort.
+# Problem Statement
 
-The project is further extended with an interactive Streamlit interface, allowing users to easily visualize results, upload images, and explore predictions in real time through a user-friendly dashboard. Future enhancements may include real-time analysis, integration with geospatial data, improved model accuracy, and expansion to detect more complex archaeological patterns using advanced AI techniques.
+In Archaeological surveys over large regions are slow, expensive, and difficult to scale manually. So to overcome for this statement:
+  * AI-driven Archaeological Site Mapping Project uses advanced techniques like deep learning and computer vision to automatically detect, segment, and analyze archaeological features from satellite or aerial imagery. 
+  * By combining models such as U-Net for image segmentation and object detection algorithms, it helps identify hidden structures and terrain patterns with high accuracy through IoU and Dice Score. 
+  * The system further evaluates performance using metrics like RMSE and R² score, making the mapping process faster, more precise, and less dependent on manual effort.
+  * Then after predict the risk of the erosion prone and stable areas. 
+Future enhancements may include real-time analysis, integration with geospatial data, improved model accuracy, and expansion to detect more complex archaeological patterns using advanced AI techniques.
 
 ## System Architecture
 
@@ -28,7 +33,7 @@ Annotate / Preprocessed Image
  Visualization (via Streamlit App)
  ```     
 
-## Features
+## Key Features
 * Satellite/Drone imagery preprocessing.
 * Semantic segmentation (ruins vs vegetation vs bounding box).
 * Artifact detection and classification.
@@ -39,9 +44,9 @@ Annotate / Preprocessed Image
 ##  Project Workflow
 * Acquire and annotate the imagery.
 * Preprocess and split the dataset.
-* Generate the segmentation masks from the JSON annotations
-* Train U-net segmentation and YOLOv8 Object detection models.
-* Predict erosion zones using terrain features.
+* Generate the segmentation masks from the JSON annotations.
+* Train U-net segmentation and YOLOv8 based Object detection models.
+* Predict erosion zones using XGBoost terrain features.
 * Overlay and visualize results through a Streamlit Dashboard.
 
 ## Dataset Sources
@@ -54,7 +59,7 @@ Annotate / Preprocessed Image
 
 ## Tech Stack
 * Language - Python
-* Libraries - Pandas, Numpy, OpenCV, Ultralytics YOLOv8, scikit-learn, GeoPandas, Matplotlib
+* Libraries - Pandas, Numpy, OpenCV, Ultralytics YOLOv8, XGBoost, scikit-learn, GeoPandas, Matplotlib
 * Frameworks - PyTorch/TensorFlow
 * Interfaces and Data Processing - Streamlit
 
@@ -67,3 +72,16 @@ The overall objective of this project is to:
 * To improve the accuracy and efficiency of detecting hidden archaeological sites.
 * Build an interactive Streamlit interface for easy visualization and user interaction.
 * To create a scalable system that can be extended for future improvements and advanced archaeological analysis.
+
+## Future Scope
+# 1. Preserving Cultural Heritage
+   * Archaeological sites are fragile and can be damaged by natural erosion, urbanization, or climate change.
+   * Using AI to map and monitor these sites ensures digital preservation before they are lost.
+# 2. Faster & More Accurate Discoveries
+   * Traditionally, surveying sites is time-consuming and labor-intensive.
+   * AI can analyze satellite images, drones, and other data quickly, helping archaeologists spot potential dig sites they might miss     manually.
+# 3. Support for Conservation Policies
+   * Governments and organizations can use AI-generated maps to prioritize site protection, plan urban expansion, or prevent illegal excavations.
+
+## Author
+PALAK AGRAWAL
