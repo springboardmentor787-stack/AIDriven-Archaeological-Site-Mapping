@@ -197,3 +197,150 @@ names: ['ruins','vegetation','artifact']
 
 # Evaluating the trained YOLOv5 model using the best saved weights
 !python val.py --weights runs/train/exp/weights/best.pt --data data.yaml
+
+
+
+
+Milestone 3:
+terrain-erosion-project/
+│
+├── data/
+│   ├── raw/
+│   ├── features/
+│   └── labels/
+│
+├── scripts/
+│   ├── extract_features.js
+│   └── generate_labels.js
+│
+├── notebooks/
+│   └── visualization.ipynb
+│
+├── README.md
+└── requirements.txt
+
+// ===============================
+// TERRAIN FEATURE EXTRACTION
+// ===============================
+
+// Step 1: Define Region of Interest (ROI)
+var roi = ee.Geometry.Rectangle([76.3, 15.2, 76.6, 15.5]); // Example: Hampi
+Map.centerObject(roi, 10);
+
+// Step 2: Load Sentinel-2 Data
+var s2 = ee.ImageCollection('COPERNICUS/S2')
+  .filterBounds(roi)
+  .filterDate('2023-01-01', '2023-12-31')
+  .median();
+
+// Step 3: Compute NDVI (Vegetation Index)
+var ndvi = s2.normalizedDifference(['B8', 'B4']).rename('NDVI');
+
+// Step 4: Load Elevation Data
+var dem = ee.Image('USGS/SRTMGL1_003').rename('Elevation');
+
+// Step 5: Compute Slope
+var slope = ee.Terrain.slope(dem).rename('Slope');
+
+// Step 6: Combine Features
+var features = ndvi.addBands(slope).addBands(dem);
+
+// Step 7: Visualization
+Map.addLayer(ndvi, {min: -1, max: 1, palette: ['blue','white','green']}, 'NDVI');
+Map.addLayer(slope, {min: 0, max: 60}, 'Slope');
+Map.addLayer(dem, {min: 0, max: 3000}, 'Elevation');
+
+// Step 8: Export Features
+Export.image.toDrive({
+  image: features,
+  description: 'terrain_features',
+  region: roi,
+  scale: 30,
+  fileFormat: 'GeoTIFF'
+});
+
+// ===============================
+// LABEL GENERATION (EROSION MAP)
+// ===============================
+
+// Step 1: Define ROI
+var roi = ee.Geometry.Rectangle([76.3, 15.2, 76.6, 15.5]);
+
+// Step 2: Load Data Again
+var s2 = ee.ImageCollection('COPERNICUS/S2')
+  .filterBounds(roi)
+  .filterDate('2023-01-01', '2023-12-31')
+  .median();
+
+var dem = ee.Image('USGS/SRTMGL1_003');
+
+// Step 3: Compute NDVI
+var ndvi = s2.normalizedDifference(['B8','B4']).rename('NDVI');
+
+// Step 4: Compute Slope
+var slope = ee.Terrain.slope(dem).rename('Slope');
+
+// Step 5: Define Rules
+// Erosion-prone → 1
+var erosion = slope.gt(20).and(ndvi.lt(0.3));
+
+// Stable → 0
+var stable = slope.lt(10).and(ndvi.gt(0.5));
+
+// Step 6: Combine Labels
+var labels = erosion.multiply(1).add(stable.multiply(0)).rename('Label');
+
+// Step 7: Visualization
+Map.addLayer(labels, {min: 0, max: 1, palette: ['green','red']}, 'Erosion Map');
+
+// Step 8: Export Labels
+Export.image.toDrive({
+  image: labels,
+  description: 'erosion_labels',
+  region: roi,
+  scale: 30,
+  fileFormat: 'GeoTIFF'
+});
+
+Requirements:
+rasterio
+numpy
+matplotlib
+scikit-learn
+xgboost
+
+# Terrain Erosion Prediction using Remote Sensing & Machine Learning
+
+## Overview
+This project focuses on identifying erosion-prone areas using terrain features such as NDVI (vegetation index), slope, and elevation derived from satellite data.
+
+## Tools Used
+- Google Earth Engine
+- Sentinel-2 Satellite Data
+- SRTM Elevation Data
+- Python (Machine Learning)
+
+## Feature Extraction
+- NDVI calculated from Sentinel-2 imagery
+- Slope derived from elevation data
+- Elevation from SRTM dataset
+
+## Label Generation
+Rule-based classification:
+- Erosion-prone: Slope > 20 AND NDVI < 0.3
+- Stable: Slope < 10 AND NDVI > 0.5
+
+## Output
+- Terrain feature maps (GeoTIFF)
+- Labeled erosion dataset
+
+## Folder Structure
+data/
+scripts/
+notebooks/
+
+## Future Work
+- Train ML models (Random Forest / XGBoost)
+- Improve labeling using manual annotation
+
+
