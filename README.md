@@ -41,7 +41,11 @@ AIDriven-Archaeological-Site-Mapping/
 ├── Milestone2/
 │   ├── week3.ipynb/
 │   ├── week4.ipynb/
-│  
+│
+├── Milestone3/
+│   ├── week5.ipynb/
+│   ├── week6.ipynb/
+│   ├── erosion_dataset (1).csv/
 └── README.md
 ```
 
@@ -166,16 +170,56 @@ streamlit run app.py
 
 ---
 
-# 📌 Future Work (Milestone 3)
+#  Milestone 3 – Terrain Erosion Prediction
 
-* Terrain erosion prediction
-* Feature-based analysis (slope, NDVI, elevation)
-* Map-based visualization
+##  Objective
+
+To predict erosion-prone areas using terrain features derived from satellite imagery.
 
 ---
 
-#  Conclusion
+##  Week 5: Feature Extraction & Dataset Preparation
 
-This project demonstrates how AI can assist archaeological research by automating feature detection and landscape analysis using satellite imagery.
+* Reused satellite images from previous milestones
+* Extracted terrain features:
+
+  * Slope (using gradient)
+  * Vegetation Index (NDVI)
+  * Elevation (approximated)
+* Created pixel-wise dataset from images
+* Applied random sampling (200,000 samples) for optimization
+* Generated labels using rule-based conditions:
+
+  * High slope + low vegetation → erosion-prone
+
+---
+
+##  Week 6: Model Training & Evaluation
+
+* Split dataset into training and testing sets
+* Trained models:
+
+  * Random Forest
+  * XGBoost
+* Evaluated using:
+
+  * RMSE
+  * R² Score
+* Converted regression output to classification using thresholding
+* Achieved high accuracy (~99.9%)
+
+---
+
+## 📊 Results
+
+* Random Forest: RMSE ≈ 0.0, R² ≈ 1.0
+* XGBoost: RMSE ≈ 0.027, R² ≈ 0.995
+* Classification Accuracy: ~99.9%
+
+---
+
+## Key Insight
+
+Terrain features such as slope and vegetation index are strong indicators of erosion-prone regions.
 
 ---
