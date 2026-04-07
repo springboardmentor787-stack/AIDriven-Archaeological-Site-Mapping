@@ -292,15 +292,6 @@ All configuration is done through the **sidebar** at runtime — no config files
 Archaeological Intelligence Platform — v4.2
 
 ---
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-<div align="center">
-
-*Built for archaeology. Powered by AI.*
+ 
 
 </div>
