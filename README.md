@@ -2,7 +2,8 @@
 
 <div align="center">
 
-![ArchAI Banner](assets/banner.png)
+![Screenshot_7-4-2026_221226_](https://github.com/user-attachments/assets/e15fa236-4008-45ae-a5b1-d97a07690bb6)
+
 
 > **AI-powered satellite & drone image analysis for archaeological survey, mound detection, and hidden ruins discovery.**
 
@@ -21,28 +22,22 @@
 
 **ArchAI** is an end-to-end archaeological intelligence platform that brings AI, computer vision, and geospatial analysis into a single Streamlit dashboard. Upload satellite or drone imagery and get instant insights on artifact detection, vegetation analysis, erosion risk, digital deforestation, and potential hidden ruins — all powered by YOLOv11, VARI indexing, and Groq's LLaMA 3.3 70B for structured AI field reports.
 
-<div align="center">
-
-![Dashboard Overview](assets/dashboard_overview.png)
-
-</div>
-
 ---
 
 ## Features
 
 | Module | Description |
 |--------|-------------|
-| 🔍 **Artifact Detection** | YOLOv11 inference on satellite / drone imagery with confidence filtering |
-| 🌿 **VARI Vegetation Index** | Visible Atmospherically Resistant Index — RGB proxy for NDVI |
-| ⚠️ **Erosion Risk Assessment** | Composite score from slope, elevation, and vegetation; ML model or formula fallback |
-| 🪨 **Object Detection & Classification** | Detects ALL objects — classifies each as Man-made, Natural, or Uncertain |
-| 🌳 **Digital Deforestation AI** | Digitally removes vegetation and reveals ground anomalies + buried structure hotspots |
-| 🤖 **AI Field Reports** | Groq LLaMA 3.3 70B generates structured 4–5 line archaeological assessments |
-| 🗺️ **Interactive Map** | Google Satellite basemap via Folium with artifact and object overlays |
-| 📤 **Export** | KMZ, plain-text reports, PNG processed images, CSV detection data |
-| 🎨 **Theme Toggle** | Dark / Light themes with full CSS variable theming |
-| 📍 **Geocoding** | 4-engine fallback: Nominatim → Photon → Structured → India-scoped |
+|  **Artifact Detection** | YOLOv11 inference on satellite / drone imagery with confidence filtering |
+|  **VARI Vegetation Index** | Visible Atmospherically Resistant Index — RGB proxy for NDVI |
+|  **Erosion Risk Assessment** | Composite score from slope, elevation, and vegetation; ML model or formula fallback |
+|  **Object Detection & Classification** | Detects ALL objects — classifies each as Man-made, Natural, or Uncertain |
+|  **Digital Deforestation AI** | Digitally removes vegetation and reveals ground anomalies + buried structure hotspots |
+|  **AI Field Reports** | Groq LLaMA 3.3 70B generates structured 4–5 line archaeological assessments |
+|  **Interactive Map** | Google Satellite basemap via Folium with artifact and object overlays |
+|  **Export** | KMZ, plain-text reports, PNG processed images, CSV detection data |
+|  **Theme Toggle** | Dark / Light themes with full CSS variable theming |
+|  **Geocoding** | 4-engine fallback: Nominatim → Photon → Structured → India-scoped |
 
 ---
 
@@ -51,19 +46,26 @@
 <div align="center">
 
 ### Analysis Tab — VARI Index & Erosion Risk
-![Analysis Tab](assets/tab_analysis.png)
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/59b959ff-f052-4eb9-8fa7-5a5c3bdd41fd" />
+
 
 ### Object Detection — Classification Overlay
-![Object Detection](assets/tab_mound_detection.png)
+<img width="1912" height="910" alt="image" src="https://github.com/user-attachments/assets/b392a52c-8bda-4e3a-b8fe-0ef7e803feaf" />
+
 
 ### Digital Deforestation — Hidden Structure Heatmap
-![Deforestation AI](assets/tab_deforestation.png)
+<img width="1810" height="908" alt="image" src="https://github.com/user-attachments/assets/4f83750b-6e74-42a5-b87d-264c5ff3c987" />
+
+
+
 
 ### Interactive Map View
-![Map Tab](assets/tab_map.png)
+<img width="1843" height="879" alt="image" src="https://github.com/user-attachments/assets/36eaf6ec-ed63-467d-bebc-27f5a8e2c72b" />
+
 
 ### AI Field Report Widget
-![AI Report](assets/ai_report_widget.png)
+<img width="1892" height="818" alt="image" src="https://github.com/user-attachments/assets/c509e003-126d-4a9c-9ebf-fb8c4f2b76e9" />
+
 
 </div>
 
