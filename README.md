@@ -1,327 +1,292 @@
-# AIDriven-Archaeological-Site-Mapping
+# ArchAI — Archaeological Intelligence Platform
 
-An AI-based system for detecting archaeological features (ruins, vegetation, artifacts) from satellite images and predicting terrain erosion risk using machine learning.
+<div align="center">
 
-This project combines **Computer Vision** and **Machine Learning** to assist archaeological site monitoring and preservation.
+![ArchAI Banner](assets/banner.png)
 
----
+> **AI-powered satellite & drone image analysis for archaeological survey, mound detection, and hidden ruins discovery.**
 
-# Project Overview
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B?style=flat-square&logo=streamlit)](https://streamlit.io)
+[![YOLOv11](https://img.shields.io/badge/YOLO-v11-00FFFF?style=flat-square)](https://ultralytics.com)
+[![Groq LLaMA](https://img.shields.io/badge/Groq-LLaMA%203.3%2070B-F97316?style=flat-square)](https://groq.com)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-4.2-gold?style=flat-square)]()
 
-This system performs the following tasks:
-
-1. Detect archaeological features from satellite images
-2. Segment ruins and vegetation areas
-3. Predict terrain erosion risk
-4. Visualize results using an interactive dashboard
-
----
-
-# Project Pipeline
-
-```
-Satellite Image
-      ↓
-YOLO Object Detection
-      ↓
-U-Net Segmentation
-      ↓
-Random Forest Erosion Prediction
-      ↓
-Streamlit Dashboard Visualization
-```
+</div>
 
 ---
 
-# Features
+## Overview
 
-- Archaeological ruin detection
-- Vegetation detection
-- Artifact detection
-- Terrain segmentation
-- Terrain erosion prediction
-- Interactive visualization dashboard
+**ArchAI** is an end-to-end archaeological intelligence platform that brings AI, computer vision, and geospatial analysis into a single Streamlit dashboard. Upload satellite or drone imagery and get instant insights on artifact detection, vegetation analysis, erosion risk, digital deforestation, and potential hidden ruins — all powered by YOLOv11, VARI indexing, and Groq's LLaMA 3.3 70B for structured AI field reports.
 
----
+<div align="center">
 
-# Technologies Used
+![Dashboard Overview](assets/dashboard_overview.png)
 
-| Category | Tools |
-|--------|--------|
-| Computer Vision | YOLO (Ultralytics) |
-| Segmentation | U-Net |
-| Machine Learning | Random Forest |
-| Dataset Platform | Roboflow |
-| Visualization | Streamlit |
-| Programming Language | Python |
+</div>
 
 ---
 
-# Dataset
+## Features
 
-Satellite and drone images were used to train the models.
-
-Dataset preparation included:
-
-- Image collection from satellite sources
-- Annotation of ruins, vegetation, and artifacts
-- Dataset augmentation
-- Train / validation / test split
-
-Total images used:
-
-```
-254 images
-```
-
-Dataset split:
-
-```
-Train: 225 images
-Validation: 18 images
-Test: 11 images
-```
+| Module | Description |
+|--------|-------------|
+| 🔍 **Artifact Detection** | YOLOv11 inference on satellite / drone imagery with confidence filtering |
+| 🌿 **VARI Vegetation Index** | Visible Atmospherically Resistant Index — RGB proxy for NDVI |
+| ⚠️ **Erosion Risk Assessment** | Composite score from slope, elevation, and vegetation; ML model or formula fallback |
+| 🪨 **Object Detection & Classification** | Detects ALL objects — classifies each as Man-made, Natural, or Uncertain |
+| 🌳 **Digital Deforestation AI** | Digitally removes vegetation and reveals ground anomalies + buried structure hotspots |
+| 🤖 **AI Field Reports** | Groq LLaMA 3.3 70B generates structured 4–5 line archaeological assessments |
+| 🗺️ **Interactive Map** | Google Satellite basemap via Folium with artifact and object overlays |
+| 📤 **Export** | KMZ, plain-text reports, PNG processed images, CSV detection data |
+| 🎨 **Theme Toggle** | Dark / Light themes with full CSS variable theming |
+| 📍 **Geocoding** | 4-engine fallback: Nominatim → Photon → Structured → India-scoped |
 
 ---
 
-# Milestones Completed
+## Screenshots
 
-## Milestone 1 — Dataset Collection and Preparation
+<div align="center">
 
-Tasks completed:
+### Analysis Tab — VARI Index & Erosion Risk
+![Analysis Tab](assets/tab_analysis.png)
 
-- Satellite imagery collection
-- Image annotation
-- Data preprocessing
-- Dataset splitting
+### Object Detection — Classification Overlay
+![Object Detection](assets/tab_mound_detection.png)
 
-Tools used:
+### Digital Deforestation — Hidden Structure Heatmap
+![Deforestation AI](assets/tab_deforestation.png)
 
-- Roboflow
-- Annotation tools
-- Data augmentation
+### Interactive Map View
+![Map Tab](assets/tab_map.png)
 
----
+### AI Field Report Widget
+![AI Report](assets/ai_report_widget.png)
 
-## Milestone 2 — Segmentation and Object Detection
-
-### Week 3 — Segmentation Model
-
-Implemented:
-
-```
-U-Net segmentation model
-```
-
-Purpose:
-
-- Segment ruins
-- Segment vegetation
-
-Evaluation metrics:
-
-```
-IoU Score
-Dice Score
-```
-
-Libraries used:
-
-```
-segmentation_models_pytorch
-PyTorch
-```
+</div>
 
 ---
 
-### Week 4 — Object Detection
+## Installation
 
-Implemented:
+### Prerequisites
 
-```
-YOLO object detection model
-```
+- Python 3.9 or higher
+- pip
 
-Detected classes:
-
-```
-Ruins
-Vegetation
-Artifacts
-```
-
-Evaluation metrics:
-
-```
-mAP
-Precision
-Recall
-```
-
-Training performed using:
-
-```
-Ultralytics YOLO
-Roboflow dataset
-```
-
----
-
-## Milestone 3 — Terrain Erosion Prediction
-
-A machine learning model predicts whether an area is:
-
-```
-Stable
-or
-Erosion-prone
-```
-
-Features used:
-
-```
-Slope
-Vegetation Index
-Elevation
-```
-
-Model used:
-
-```
-Random Forest Classifier
-```
-
-Evaluation metric:
-
-```
-Accuracy
-```
-
-Example prediction:
-
-```
-Slope: 28
-Vegetation Index: 0.35
-Elevation: 130
-
-Prediction:
-Erosion Prone Area
-```
-
----
-
-## Milestone 4 — Visualization Dashboard
-
-A Streamlit dashboard was created to visualize the results.
-
-Dashboard features:
-
-- Upload satellite image
-- Display satellite image
-- Adjust terrain parameters
-- Predict erosion risk
-
-The dashboard integrates:
-
-```
-Computer Vision + Machine Learning results
-```
-
----
-
-# Installation
-
-Clone the repository:
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/krishnan4/archaeological-site-Mapping.git
+git clone https://github.com/YOUR_USERNAME/archai-dashboard.git
+cd archai-dashboard
 ```
 
-Navigate to the project folder:
+### 2. Install Dependencies
 
 ```bash
-cd archaeological-site-detection
+pip install streamlit ultralytics folium streamlit-folium opencv-python groq joblib numpy pandas matplotlib requests
 ```
 
-Install required libraries:
+### 3. (Optional) Add Model Weights
+
+| File | Purpose | Required? |
+|------|---------|-----------|
+| `model/best.pt` | YOLOv11 weights for artifact detection | No — demo mode activates automatically |
+| `erosion_model.pkl` | Trained erosion risk classifier (joblib bundle) | No — formula fallback is used |
 
 ```bash
-pip install ultralytics
-pip install segmentation-models-pytorch
-pip install streamlit
-pip install opencv-python
-pip install scikit-learn
-pip install matplotlib
+mkdir model
+# Place your YOLOv11 weights:
+cp /path/to/best.pt model/best.pt
 ```
 
----
-
-# Running the Dashboard
-
-Run the Streamlit application:
+### 4. Run the Dashboard
 
 ```bash
-streamlit run app.py
+streamlit run dashboard_app.py
 ```
 
-The dashboard will open in your browser.
+Open your browser at `http://localhost:8501`
 
 ---
 
-# Example Outputs
-
-Object detection example:
+## Project Structure
 
 ```
-Ruins detected
-Vegetation detected
-Artifacts detected
-```
-
-Segmentation output:
-
-```
-Ruins segmentation mask
-Vegetation segmentation mask
-```
-
-Erosion prediction example:
-
-```
-Slope: 28
-Vegetation Index: 0.35
-Elevation: 130
-
-Prediction:
-Erosion Prone Area
+archai-dashboard/
+│
+├── dashboard_app.py          # Main Streamlit application
+│
+├── model/
+│   └── best.pt               # YOLOv11 weights (optional)
+│
+├── erosion_model.pkl          # Erosion ML model (optional)
+│
+├── assets/                    # README screenshots & banner
+│   ├── banner.png
+│   ├── dashboard_overview.png
+│   ├── tab_analysis.png
+│   ├── tab_mound_detection.png
+│   ├── tab_deforestation.png
+│   ├── tab_map.png
+│   └── ai_report_widget.png
+│
+└── README.md
 ```
 
 ---
 
-# Applications
+## Tabs & Workflow
 
-This system can be used for:
+### 1. Analysis
+Upload a satellite or drone image to:
+- Run YOLOv11 artifact detection
+- Compute VARI vegetation index with segmentation (Very Dense → Bare Soil)
+- Auto-detect terrain slope and elevation from image gradients
+- Calculate composite erosion risk score
 
-- Archaeological site monitoring
-- Heritage conservation
-- Remote sensing analysis
-- Terrain risk assessment
+### 2. Object Detection
+AI-assisted survey optimisation:
+- Detects ALL visible objects in the image
+- Classifies each as **Man-made**, **Natural**, or **Uncertain** using a 4-feature scoring model
+- Estimates survey time and cost savings vs. traditional field methods
+- Generates overlay with colour-coded bounding boxes + detection density heatmap
+- AI-powered survey report via Groq LLaMA 3.3 70B
+
+### 3. Deforestation AI
+Digitally strips vegetation to reveal buried features:
+- VARI-based vegetation masking with adjustable threshold
+- Earth-tone channel suppression with configurable intensity
+- CLAHE + Sobel edge enhancement for ground detail
+- Composite anomaly heatmap (texture + edge density + linearity + ground exposure)
+- Connected-component counting for hidden structure estimation
+
+### 4. Map
+Interactive Folium map with:
+- Google Satellite basemap
+- Site origin marker with risk-coloured icon
+- Artifact and classified object overlays
+- External links to Google Maps, Bing, OpenStreetMap, and Google Earth
+
+### 5. Reports
+Export everything:
+- `.kmz` for Google Earth Pro
+- `.txt` full site report
+- `.png` processed images (deforestation view, heatmap, ground enhancement)
+- `.csv` detection data
 
 ---
 
-# Future Improvements
+## Object Classification Logic
 
-Possible improvements include:
+```
+VARI > 0.35  ───────────────────────────→  Natural  (override)
+Shape regularity < 0.45  ───────────────→  Natural  (override)
 
-- Using higher resolution satellite datasets
-- Improving segmentation accuracy
-- Integrating GIS mapping
-- Real-time satellite monitoring
+Otherwise score = 0.35 × shape_regularity
+               + 0.25 × (1 - texture_variance)
+               + 0.25 × (1 - VARI)
+               + 0.15 × detection_confidence
+
+Score ≥ 0.65  →  Man-made
+Score ≤ 0.45  →  Natural
+Else          →  Uncertain
+```
+
+### Overlay Legend (v4.2)
+
+| Visual Style | Class |
+|---|---|
+| Thick red border + filled label tag | Man-made (priority) |
+| Thin green border + `N xx%` label | Natural |
+| Thin gold border + `U xx%` label | Uncertain |
 
 ---
 
-# Author
+## Demo Mode
 
-Developed as part of an AI/ML milestone-based project on archaeological site detection and terrain analysis.
+If no YOLO model is found at `model/best.pt`, the platform runs in **demo mode**:
+- Object Detection uses Laplacian blob detection on image texture to generate synthetic candidates
+- The full classification pipeline (VARI, shape regularity, texture variance) still runs on detected blobs
+- VARI, segmentation, erosion risk, and deforestation AI modules are **fully operational** in demo mode
+- AI field reports via Groq work as normal
 
- 
+---
+
+## Geocoding
+
+Location search uses a 4-engine fallback chain:
+
+```
+1. Nominatim (OpenStreetMap) — free-form query
+2. Nominatim — India-scoped query
+3. Photon (Komoot) — free-form query
+4. Photon — India-scoped query
+5. Nominatim structured (village + state + country)
+6. Token-by-token fallback for partial matches
+```
+
+---
+
+## Bug Fixes — v4.2
+
+| Bug | Root Cause | Fix |
+|-----|-----------|-----|
+| Object detection only showed mounds/ruins labels | Label whitelist filtered all other YOLO detections | Removed filter — ALL detections accepted; demo mode uses Laplacian blobs |
+| Deforestation `NoneType` subscript error | `rgb` stored in session state went `None` on re-render | `rgb` always decoded fresh from live uploader; session state stores processed arrays only |
+| Sidebar hidden on narrow viewports | Streamlit auto-collapses sidebar; collapse arrow invisible | CSS forces sidebar open; collapse arrow always visible with `z-index: 999999` |
+| Natural / Uncertain boxes invisible on overlay | `cv2.addWeighted` alpha-blend produced invisible boxes | All boxes drawn directly: thin 1px border for Natural/Uncertain, thick 3px for Man-made |
+
+---
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| Dashboard framework | [Streamlit](https://streamlit.io) |
+| Object detection | [Ultralytics YOLOv11](https://ultralytics.com) |
+| Computer vision | [OpenCV](https://opencv.org) |
+| AI field reports | [Groq — LLaMA 3.3 70B](https://groq.com) |
+| Geospatial map | [Folium](https://python-visualization.github.io/folium/) + [streamlit-folium](https://github.com/randyzwitch/streamlit-folium) |
+| Geocoding | [Nominatim](https://nominatim.org) + [Photon](https://photon.komoot.io) |
+| ML model support | [joblib](https://joblib.readthedocs.io) |
+| Fonts | Cormorant Garamond · JetBrains Mono · Archivo Narrow |
+
+---
+
+## Configuration
+
+All configuration is done through the **sidebar** at runtime — no config files needed.
+
+| Setting | Location | Default |
+|---------|----------|---------|
+| YOLO weights path | Sidebar → Detection Model | `model/best.pt` |
+| Confidence threshold | Sidebar slider | 40% |
+| Erosion model path | Sidebar → Erosion Model | `erosion_model.pkl` |
+| Location name | Sidebar → Location Search | — |
+| Latitude / Longitude | Sidebar → Coordinates | 20.5937 N, 78.9629 E |
+| Vegetation threshold (VARI) | Deforestation tab slider | 0.18 |
+| Removal intensity | Deforestation tab slider | 75% |
+
+---
+
+## Developer
+
+**Hari Krishanan M**  
+Archaeological Intelligence Platform — v4.2
+
+---
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+
+*Built for archaeology. Powered by AI.*
+
+</div>
