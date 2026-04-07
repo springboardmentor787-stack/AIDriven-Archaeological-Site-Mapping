@@ -117,25 +117,37 @@ Open your browser at `http://localhost:8501`
 ## Project Structure
 
 ```
-archai-dashboard/
-│
-├── dashboard_app.py          # Main Streamlit application
-│
-├── model/
-│   └── best.pt               # YOLOv11 weights (optional)
-│
-├── erosion_model.pkl          # Erosion ML model (optional)
-│
-├── assets/                    # README screenshots & banner
-│   ├── banner.png
-│   ├── dashboard_overview.png
-│   ├── tab_analysis.png
-│   ├── tab_mound_detection.png
-│   ├── tab_deforestation.png
-│   ├── tab_map.png
-│   └── ai_report_widget.png
-│
-└── README.md
+archai/
+├── config/
+│   ├── __init__.py
+│   ├── settings.py       ← GROQ key, THEMES, SESSION_DEFAULTS
+│   └── styles.py         ← All CSS
+├── modules/
+│   ├── __init__.py
+│   ├── image_processing.py  ← VARI, segmentation, erosion, terrain detection
+│   ├── mound_detection.py   ← Candidate detection, classification, overlay, heatmap
+│   └── deforestation.py     ← Vegetation mask, removal, enhancement, anomaly detection
+├── utils/
+│   ├── __init__.py
+│   ├── geocoding.py      ← 4-engine geocoder
+│   ├── model_loaders.py  ← YOLO + erosion model loaders
+│   └── export.py         ← KML/KMZ builder
+├── widgets/
+│   ├── __init__.py
+│   ├── ai_report.py      ← Erosion AI report HTML widget
+│   ├── mound_report.py   ← Mound survey AI report widget
+│   └── deforest_report.py ← Deforestation AI report widget
+├── tabs/
+│   ├── sidebar.py
+│   ├── tab_analysis.py
+│   ├── tab_mound.py
+│   ├── tab_deforestation.py  ← (copy from original)
+│   ├── tab_map.py            
+│   ├── tab_reports.py         
+│   └── tab_about.py           
+├── app.py                    ← (main entry point)
+├── requirements.txt           
+└── .gitignore               
 ```
 
 ---
