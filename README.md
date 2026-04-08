@@ -433,7 +433,7 @@ When no YOLO weights are present at `model/best.pt`, ArchAI activates **Demo Mod
 <div align="center">
 
 ```
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 **ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ**
@@ -443,7 +443,7 @@ When no YOLO weights are present at `model/best.pt`, ArchAI activates **Demo Mod
 *Archaeological Intelligence Platform · v4.2*
 
 ```
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 *"The past is never truly buried — only waiting to be seen."*
