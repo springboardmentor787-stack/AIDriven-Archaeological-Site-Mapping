@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-03-29T14:15:45.739492",
+  "output_root": "artifacts/model_metrics_20260329",
+  "models": [
+    "deeplabv3plus_segmentation",
+    "xgboost_erosion",
+    "yolo11n_base",
+    "yolov8n_base",
+    "yolov8n_train2",
+    "yolov8s_archaeology2",
+    "yolov8s_base"
+  ],
+  "code_versions": {
+    "git_commit": "c63af9ccaab2c0dc63c80b372dddba7b4cc66e38",
+    "python_version": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "requirements_file": "requirements.txt"
+  },
+  "dataset_inventory": {
+    "detection": {
+      "train": {
+        "images": 648,
+        "labels": 648
+      },
+      "valid": {
+        "images": 61,
+        "labels": 61
+      },
+      "test": {
+        "images": 31,
+        "labels": 31
+      }
+    },
+    "segmentation": {
+      "train": {
+        "images": 648,
+        "masks": 648
+      },
+      "valid": {
+        "images": 61,
+        "masks": 61
+      },
+      "test": {
+        "images": 31,
+        "masks": 31
+      }
+    },
+    "terrain_rows": 1000
+  }
+}

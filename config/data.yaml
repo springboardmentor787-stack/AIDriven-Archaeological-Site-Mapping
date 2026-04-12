@@ -1,0 +1,12 @@
+path: dataset
+
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: boulders 
+  1: others
+  2: ruins
+  3: structures
+  4: vegetation

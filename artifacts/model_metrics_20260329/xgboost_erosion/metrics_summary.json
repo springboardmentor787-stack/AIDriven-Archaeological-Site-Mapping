@@ -1,0 +1,87 @@
+{
+  "model_name": "xgboost_erosion",
+  "task_type": "binary_classification",
+  "status": "evaluated_on_holdout_split",
+  "data_used": {
+    "rows_total": 1000,
+    "features_used": [
+      "slope",
+      "vegetation",
+      "elevation",
+      "rainfall",
+      "soil",
+      "boulders",
+      "ruins",
+      "structures"
+    ],
+    "target": "erosion",
+    "train_rows": 800,
+    "test_rows": 200,
+    "terrain_rows_reference": 1000
+  },
+  "epochs": null,
+  "general_training_metrics": {
+    "accuracy": 0.905,
+    "precision": 0.9090909090909091,
+    "recall": 0.9,
+    "f1": 0.9045226130653267,
+    "roc_auc": 0.966,
+    "average_precision": 0.9691711745275607
+  },
+  "regression_metrics": {
+    "mse": 0.07404135912656784,
+    "mae": 0.136555477976799,
+    "r2": 0.7038345336914062,
+    "rmse": 0.27210541914222847
+  },
+  "advanced_metrics": {
+    "confusion_matrix": [
+      [
+        91,
+        9
+      ],
+      [
+        10,
+        90
+      ]
+    ]
+  },
+  "operational_metrics": {
+    "model_size_mb": 0.4968,
+    "latency_ms_mean_cpu": 2.0813,
+    "throughput_fps_cpu": 480.469,
+    "resource_usage": null
+  },
+  "reproducibility": {
+    "training_script": "terrain_model/train_xgboost.py",
+    "model_files": {
+      "model": "terrain_model/erosion_model.pkl",
+      "dataset": "terrain_model/erosion_dataset.csv"
+    },
+    "code_versions": {
+      "git_commit": "c63af9ccaab2c0dc63c80b372dddba7b4cc66e38",
+      "python_version": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "requirements_file": "requirements.txt"
+    },
+    "configurations": {
+      "requirements_file": "requirements.txt"
+    },
+    "logs": {
+      "existing_report": "terrain_model/artifacts/xgboost_classification_report.txt"
+    },
+    "deployment_assets": {
+      "streamlit": "app.py",
+      "nextjs_api": "geo-ai-ui/app/api/predict/route.ts"
+    }
+  },
+  "artifacts": [
+    "classification_report_eval.txt",
+    "confusion_matrix_eval.png",
+    "roc_curve_eval.png",
+    "pr_curve_eval.png",
+    "xgboost_erosion/raw_artifacts/xgboost_classification_report.txt",
+    "xgboost_erosion/raw_artifacts/xgboost_confusion_matrix.png",
+    "xgboost_erosion/raw_artifacts/feature_importance.png"
+  ]
+}
