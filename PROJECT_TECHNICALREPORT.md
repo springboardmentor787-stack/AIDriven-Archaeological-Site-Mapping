@@ -57,8 +57,9 @@ Users upload satellite images using Streamlit.
 
 ### Code used:
 
+```text
 uploaded_files = st.file_uploader(...)
-
+```
 
 ---
 
@@ -102,7 +103,9 @@ The system extracts three primary features:
 ### 1. Vegetation Percentage
 Represents the proportion of green pixels in the image. Higher vegetation indicates lower erosion risk.
 ### Code used: 
+```text
 veg_ratio = np.mean(vegetation_mask)
+```
 Measures green coverage
 Range: 0 → 1
 High vegetation = low risk
@@ -110,14 +113,18 @@ High vegetation = low risk
 ### 2. Texture
 Measured using the standard deviation of grayscale pixel intensity. It represents surface roughness.
 ### Code used:
+```text
 texture = np.std(gray)
+```
 Measures variation in pixels
 High texture = rough terrain
 
 ### 3. Brightness
 Represents average pixel intensity and indicates surface exposure.
 ### Code used:
+```text
 brightness = np.mean(gray)
+```
 Indicates dryness
 Higher brightness = more erosion risk
 
@@ -239,8 +246,10 @@ To test how risk changes when vegetation changes.
 * Useful for decision-making in field research
 
 ### Code used:
-* Slider: sim_veg = st.slider(...)
-* Risk Calculation: sim_score = erosion_risk_model(...)
+ ```text
+ Slider: sim_veg = st.slider(...)
+ Risk Calculation: sim_score = erosion_risk_model(...)
+```
 
 ---
 
