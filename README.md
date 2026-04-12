@@ -1,11 +1,11 @@
-# 🏛️ AI-Driven Archaeological Site Mapping
+#  AI-Driven Archaeological Site Mapping
 
 An end-to-end AI-powered system for analyzing archaeological sites using satellite imagery.
 The project integrates **semantic segmentation, object detection, and erosion prediction** into a unified **interactive Streamlit dashboard**.
 
 ---
 
-## 🚀 Project Overview
+##  Project Overview
 
 This system automates archaeological analysis by:
 
@@ -16,7 +16,7 @@ This system automates archaeological analysis by:
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 * Detect archaeological structures from satellite imagery
 * Perform terrain segmentation
@@ -25,7 +25,7 @@ This system automates archaeological analysis by:
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ```
 Input Image
@@ -45,7 +45,7 @@ Streamlit Dashboard Visualization
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 Internship/
@@ -72,7 +72,7 @@ Internship/
 
 ---
 
-## 🧠 Milestone Breakdown
+##  Milestone Breakdown
 
 ### 🔹 Milestone 1: Data Collection & Preparation
 
@@ -139,26 +139,26 @@ Internship/
 
 ## 📊 Dashboard Features
 
-### 📊 Site Analysis
+###  Site Analysis
 
 * Ruins coverage
 * Artifact count
 * Erosion risk score
 * Model performance metrics
 
-### 🧩 Segmentation
+###  Segmentation
 
 * Pixel-wise terrain classification
 * Coverage breakdown
 * IoU, Dice Score, Precision
 
-### 📦 Object Detection
+###  Object Detection
 
 * Bounding box visualization
 * Confidence scores
 * Precision vs Recall
 
-### 🔥 Erosion Prediction
+###  Erosion Prediction
 
 * Heatmap visualization
 * Feature importance
@@ -213,7 +213,7 @@ streamlit run app.py
 
 ---
 
-## 🔮 Future Work
+##  Future Work
 
 * Deploy on cloud
 * Add real-time satellite data
