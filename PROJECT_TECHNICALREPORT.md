@@ -2,7 +2,7 @@
 
 ---
 
-#  Introduction
+##  Introduction
 
 This project is an AI-powered archaeological intelligence system designed to analyze satellite images and detect erosion risk in archaeological sites. The system integrates computer vision, deep learning, explainable AI, and geospatial analysis to provide automated and interpretable predictions.
 
@@ -15,23 +15,23 @@ This project aims to develop an intelligent system that leverages computer visio
     
 ---
 
-#  Problem Statement
+##  Problem Statement
 
 Archaeological sites are continuously exposed to natural and human-induced changes such as vegetation loss, soil erosion, and surface degradation. Manual inspection of such large-scale satellite imagery is time-consuming, expensive, and often inaccurate.
 
 Therefore, an automated AI-based system is required to analyze images efficiently and generate risk predictions.
 
-### Why this system is needed?
+## Why this system is needed?
 
 Archaeological sites are often affected by:
 
-Soil erosion
-Vegetation loss
-Environmental changes
+- Soil erosion
+- Vegetation loss
+- Environmental changes
 Manual monitoring is slow and expensive, so AI is used for automation.
 ---
 
-# Technologies Used
+## Technologies Used
 
 This system is built using the following technologies:
 
@@ -48,7 +48,7 @@ Each tool plays a specific role in ensuring efficient image analysis and interpr
 
 ---
 
-#  Input Data
+##  Input Data
 
 The system accepts satellite images in formats such as JPG and PNG. Additionally, a ground truth CSV file can be used for evaluation, containing image names, risk labels, and geospatial coordinates.
 
@@ -62,7 +62,7 @@ uploaded_files = st.file_uploader(...)
 
 ---
 
-#  System Workflow
+##  System Workflow
 
 The system begins by allowing users to upload satellite images through a Streamlit interface. These images are then processed using a YOLOv8 model to detect relevant terrain features and objects.
 
@@ -74,6 +74,7 @@ A weighted risk formula is then applied to compute an erosion risk score. Vegeta
 
 Finally, the results are visualized using charts, heatmaps, and a combined image output that displays original, detection, and segmentation results together.
 
+```text
 [ Image Upload ]
         ↓
 [ YOLOv8 Detection ]
@@ -91,13 +92,14 @@ Finally, the results are visualized using charts, heatmaps, and a combined image
 [ Geospatial Risk Mapping ]
         ↓
 [ Visualization + PDF Report ]
+```
 ---
 
-#  Feature Extraction
+##  Feature Extraction
 
 The system extracts three primary features:
 
-### Vegetation Percentage
+### 1. Vegetation Percentage
 Represents the proportion of green pixels in the image. Higher vegetation indicates lower erosion risk.
 ### Code used: 
 veg_ratio = np.mean(vegetation_mask)
@@ -105,14 +107,14 @@ Measures green coverage
 Range: 0 → 1
 High vegetation = low risk
 
-### Texture
+### 2. Texture
 Measured using the standard deviation of grayscale pixel intensity. It represents surface roughness.
 ### Code used:
 texture = np.std(gray)
 Measures variation in pixels
 High texture = rough terrain
 
-### Brightness
+### 3. Brightness
 Represents average pixel intensity and indicates surface exposure.
 ### Code used:
 brightness = np.mean(gray)
@@ -120,15 +122,15 @@ Indicates dryness
 Higher brightness = more erosion risk
 
 Example: AjantaCaves_image.jpg
-- Vegetation percentage:	12.07%
-- Texture:	37.93
-- Brightness:	29.78
+* Vegetation percentage:	12.07%
+* Texture:	37.93
+* Brightness:	29.78
 
 These features are essential for calculating the final risk score.
 
 ---
 
-#  Risk Calculation Formula
+##  Risk Calculation Formula
 
 It predicts the erosion prone areas by used the model which is XGBoost 
 The erosion risk is calculated using a weighted formula:
@@ -139,14 +141,14 @@ Risk Score =
 (Brightness / 255) × brightness_weight
 
 Example: Default Weights:-
-- Vegetation Weight = 0.50
-- Texture Weight = 0.30
-- Brightness Weight = 0.20
+* Vegetation Weight = 0.50
+* Texture Weight = 0.30
+* Brightness Weight = 0.20
 
 ### Why weights matter?
-- Vegetation is most important → highest weight
-- Texture supports terrain instability
-- Brightness adds environmental dryness factor
+* Vegetation is most important → highest weight
+* Texture supports terrain instability
+* Brightness adds environmental dryness factor
 This formula ensures that vegetation has the highest impact on risk prediction, followed by texture and brightness.
 
 ---
@@ -155,9 +157,9 @@ This formula ensures that vegetation has the highest impact on risk prediction, 
 
 Based on computed risk score, classification is performed as:
 
-- High Risk: Score > 0.6  
-- Moderate Risk: 0.35 – 0.6  
-- Low Risk: < 0.35  
+* High Risk: Score > 0.6  
+* Moderate Risk: 0.35 – 0.6  
+* Low Risk: < 0.35  
 
 This classification helps in identifying vulnerable archaeological zones.
 
@@ -169,50 +171,51 @@ YOLOv8 is used to detect features in satellite images efficiently. It is a real-
 
 It helps in identifying relevant structures and terrain variations in images that contribute to risk analysis.
 ### Loads the model:
-model = YOLO("yolov8_model.pt")
-results = model(img)[0]
-Deployed weights: runs/detect/train/weights/best.pt
+* model = YOLO("yolov8_model.pt")
+* results = model(img)[0]
+* Deployed weights: runs/detect/train/weights/best.pt
+  
 ---
 
-# Vegetation Segmentation
+## Vegetation Segmentation
 
 Vegetation is detected using green channel thresholding. Pixels with high green intensity are classified as vegetation.
 
 This method is efficient for satellite images and helps determine soil stability based on vegetation coverage.
 ### Loads the model:
-model = U-Net (segmentation-models)
-vegetation_mask = green > veg_threshold
-results = u-net_model.pth
+* model = U-Net (segmentation-models)
+* vegetation_mask = green > veg_threshold
+* results = u-net_model.pth
 
--High green intensity = vegetation
--Threshold controls sensitivity
+* High green intensity = vegetation
+* Threshold controls sensitivity
 ### Parameter Used:
-- Default vegetation threshold = 120
-- Confidence threshold = 0.50
-- Adjustable via slider (50–255)
+* Default vegetation threshold = 120
+* Confidence threshold = 0.50
+* Adjustable via slider (50–255)
 
 ### Why this method is used:
-- Computationally efficient
-- Works well on satellite imagery
-- No need for additional training models
+* Computationally efficient
+* Works well on satellite imagery
+* No need for additional training models
 
 Vegetation mapping plays a key role in risk analysis.
 
 ---
 
-#  Visualization Techniques
+## Visualization Techniques
 
 The system uses multiple visualization methods:
 
-### Bar charts: 
+### 1. Bar charts: 
    Shows Feature comparison per image.
 Shows by:
   px.bar(features_df) 
-### Radar charts:
+### 2. Radar charts:
   Shows Feature influence analysis   
-### Gauge charts: 
+### 3. Gauge charts: 
   Shows Risk score representation  
-### Heatmaps: 
+### 4. Heatmaps: 
   Shows Spatial risk distribution  
 
 All visualizations are dynamically generated using Plotly and Streamlit for interactive analysis.
@@ -225,19 +228,19 @@ What-if simulation allows interactive modification of vegetation values to obser
 To test how risk changes when vegetation changes.
 
 ### How it works:
--A slider modifies vegetation percentage
--Risk score is recalculated instantly
--Comparison is shown between original and modified values
+* A slider modifies vegetation percentage
+* Risk score is recalculated instantly
+* Comparison is shown between original and modified values
 
 ### Importance:
--Helps understand model sensitivity
--Provides scenario-based analysis
--Improves interpretability of AI system
--Useful for decision-making in field research
+* Helps understand model sensitivity
+* Provides scenario-based analysis
+* Improves interpretability of AI system
+* Useful for decision-making in field research
 
 ### Code used:
-- Slider: sim_veg = st.slider(...)
-- Risk Calculation: sim_score = erosion_risk_model(...)
+* Slider: sim_veg = st.slider(...)
+* Risk Calculation: sim_score = erosion_risk_model(...)
 
 ---
 
@@ -263,7 +266,7 @@ This improves transparency and trust in the AI system.
 
 ---
 
-#  Geospatial Mapping
+##  Geospatial Mapping
 
 The system plots risk scores on a map using latitude and longitude values. This helps in identifying geographical distribution of high-risk areas.
 
@@ -278,7 +281,7 @@ Geospatial mapping connects AI predictions with real-world locations.
 
 ---
 
-#  Model Evaluation Metrics
+##  Model Evaluation Metrics
 
 The system is evaluated using:
 
@@ -292,7 +295,7 @@ These metrics ensure the reliability and performance of the model.
 
 ---
 
-# 📄 PDF Report Generation
+## PDF Report Generation
 
 A PDF report is generated for each image containing:
 
@@ -310,7 +313,7 @@ This allows offline documentation and reporting for research purposes.
 ---
 
 
-# 💾 Generated Outputs
+## Generated Outputs
 
 The system generates:
 
@@ -324,7 +327,7 @@ These outputs support analysis and reporting.
 
 ---
 
-# 🚀 Conclusion
+## Conclusion
 
 This AI-based archaeological intelligence system provides an automated, accurate, and explainable approach for detecting erosion risk in satellite images.
 
@@ -334,7 +337,7 @@ The system reduces manual effort and improves decision-making through data-drive
 
 ---
 
-#  Visual Outputs
+##  Visual Outputs
 
 ### Image Screenshots
 
@@ -344,7 +347,7 @@ The system reduces manual effort and improves decision-making through data-drive
 
 ---
  
-# Future Scope
+## Future Scope
 ### Real-Time Satellite Integration
 - Connect the system with live satellite data sources like Google Earth Pro or OpenAerial Imagery
 - Enable continuous monitoring of archaeological sites in real time
@@ -362,4 +365,6 @@ The system reduces manual effort and improves decision-making through data-drive
 - Overlay predictions on real maps
 - Useful for government and archaeological departments
 
-# 📌 End of Report
+---
+
+## End of Report
