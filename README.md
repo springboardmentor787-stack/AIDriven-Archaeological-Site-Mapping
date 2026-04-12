@@ -55,6 +55,8 @@ Annotate / Preprocessed Image
 * Custom Annotated images (via Labelbox/QGIS)
 * Images Segmentation (via U-Net/DeepLabv3+)
 * Object Detection (via YOLOv8)
+* Predicts Erosion Risk and Terrain analysis (via XGBoost)
+* Using SHAP for AI explanation
 * Streamlit App (For Visualization)
 
 ## Tech Stack
@@ -73,14 +75,65 @@ The overall objective of this project is to:
 * Build an interactive Streamlit interface for easy visualization and user interaction.
 * To create a scalable system that can be extended for future improvements and advanced archaeological analysis.
 
+## Installation
+
+### 1. Clone and install
+
+```bash
+!git clone https://github.com/your-username/AIDriven-Archaeological-Site-Mapping.git
+%cd AIDriven-Archaeological-Site-Mapping
+!pip install streamlit pyngrok
+pip install -r requirements.txt
+!pip install ultralytics
+!pip install matplotlib
+!pip install scikit-learn
+!pip install opencv-python
+```
+### 2. Running the project
+
+```bash
+!ngrok config add-authtoken YOUR_AUTH_TOKEN
+!streamlit run app.py
+public_url = ngrok.connect(8501)
+print("Streamlit App URL:", public_url)
+```
+The dashboard will automatically opens in the browser.
+
+## Demo Usage Flow
+
+- **User Input Layer:** Streamlit interface through which users upload satellite/drone images and set parameters.  
+
+- **Preprocessing:** Images are processed using OpenCV and converted for analysis (RGB + grayscale).  
+
+- **Object Detection (YOLOv8):** Detects archaeological structures and draws bounding boxes on images.  
+
+- **Vegetation Segmentation:** Uses green channel thresholding to separate vegetation and non-vegetation areas.  
+
+- **Feature Extraction:** Extracts key features like vegetation %, texture, brightness, edge density, and contrast.  
+
+- **Risk Prediction:** Calculates erosion risk score using a weighted feature-based model.  
+
+- **Explainability (SHAP):** Explains how each feature contributes to the risk prediction.  
+
+- **Visualization:** Displays results using Streamlit and Plotly (charts, maps, heatmaps).  
+
+- **Geospatial Mapping:** Plots risk zones on interactive maps using latitude and longitude.  
+
+- **Report Generation:** Generates downloadable CSV and PDF reports of analysis results.
+
+## Project Strength
+* This project integrates Computer Vision, Deep Learning, Explainable AI, and Geospatial Visualization for archaeological intelligence.
+* This project also demonstrates how Artificial Intelligence can assist in cultural heritage preservation by automating archaeological site detection and risk    analysis from satellite imagery.
+
+
 ## Future Scope
-# 1. Preserving Cultural Heritage
+### 1. Preserving Cultural Heritage
    * Archaeological sites are fragile and can be damaged by natural erosion, urbanization, or climate change.
    * Using AI to map and monitor these sites ensures digital preservation before they are lost.
-# 2. Faster & More Accurate Discoveries
+### 2. Faster & More Accurate Discoveries
    * Traditionally, surveying sites is time-consuming and labor-intensive.
    * AI can analyze satellite images, drones, and other data quickly, helping archaeologists spot potential dig sites they might miss     manually.
-# 3. Support for Conservation Policies
+### 3. Support for Conservation Policies
    * Governments and organizations can use AI-generated maps to prioritize site protection, plan urban expansion, or prevent illegal excavations.
 
 ## Author
