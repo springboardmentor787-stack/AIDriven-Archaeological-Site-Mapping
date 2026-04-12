@@ -1,0 +1,13 @@
+train: e:/Internship/Milestone 1/dataset/yolo_data/train/images
+val: e:/Internship/Milestone 1/dataset/yolo_data/valid/images
+test: e:/Internship/Milestone 1/dataset/yolo_data/test/images
+
+nc: 3
+names: ['artifacts', 'ruins', 'vegetation']
+
+roboflow:
+  workspace: nikhils-workspace-qkts3
+  project: archaeological-detectionfinal
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/nikhils-workspace-qkts3/archaeological-detectionfinal/dataset/2
