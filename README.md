@@ -9,12 +9,12 @@
 
 ### Streamlit UI
 <p align="center">
-	<img src="output_images/AjantaCaves_image.jpg.png" width="50%" alt="Streamlit UI sample 1" />
-	<img src="output_images/ChitradurgaFort_image.jpeg.png" width="50%" alt="Streamlit UI sample 2" />
+	<img src="output_images/AjantaCaves_image.jpg.png" width="48%" alt="Streamlit UI sample 1" />
+	<img src="output_images/ChitradurgaFort_image.jpeg.png" width="48%" alt="Streamlit UI sample 2" />
 </p>
 
 <p align="center">
-	<img src="output_images/KonarkSunTemple_image.jpg.png" width="53%" alt="Streamlit UI sample 3" />
+	<img src="output_images/KonarkSunTemple_image.jpg.png" width="50%" alt="Streamlit UI sample 3" />
 </p>
 
 
